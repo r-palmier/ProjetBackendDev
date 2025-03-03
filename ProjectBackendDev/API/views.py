@@ -1,18 +1,18 @@
 from django.shortcuts import render
-from rest_framework import generics
+from rest_framework import generics, viewsets
 from .models import Candidate
 from .serializers import CandidateSerializer
+  
 
-class CandidateListCreate(generics.ListCreateAPIView):
-    queryset = Candidate.objects.all()
+class CandidateApplying(generics.CreateAPIView):
     serializer_class = CandidateSerializer
     
-from django.db import connection
+class CandidateRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Candidate.objects.all() 
+    serializer_class = CandidateSerializer
+    lookup_field = 'id'
+    
 
-def test_db_connection():
-    try:
-        connection.ensure_connection()
-        print("Database connection successful!")
-    except Exception as e:
-        print(f"Database connection failed: {e}")
-
+class RecruteurViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Candidate.objects.all()
+    serializer_class = CandidateSerializer

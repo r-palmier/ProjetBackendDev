@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 from environs import Env
+import os
 
 
 env = Env()
@@ -30,8 +31,8 @@ SECRET_KEY = 'django-insecure-s(%!5(bq)_p*zhu5iq!y&fgj@nzlly#o&$e3(oq!-_ul)w8^s&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ["*"]
+CSRF_TRUSTED_ORIGINS = ["http://*.on-arcon.io", "https://*.on-arcon.io"]
 
 # Application definition
 
