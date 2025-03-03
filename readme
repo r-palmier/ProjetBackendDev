@@ -5,32 +5,25 @@ Description du projet
 Ce projet est une API REST développée en Django/Python dans le cadre d'une plateforme de recrutement.
 Elle permet :
 
-Aux candidats de renseigner et consulter leurs informations personnelles.
-
-Aux recruteurs de consulter la liste des candidats.
-
-Aux développeurs frontend d'exploiter une documentation Swagger pour comprendre les endpoints disponibles.
+- Aux candidats de renseigner et consulter leurs informations personnelles.
+- Aux recruteurs de consulter la liste des candidats.
+- Aux développeurs frontend d'exploiter une documentation Swagger pour comprendre les endpoints disponibles.
 
 L'API utilise Django REST Framework (DRF) et PostgreSQL comme base de données.
 
-Prérequis
+Prérequis, Avant de commencer, assurez-vous d'avoir installé :
 
-Avant de commencer, assurez-vous d'avoir installé :
-
-Python 3.9+
-
-PostgreSQL (pour la base de données)
-
-Git (pour cloner le projet)
-
-Virtualenv (optionnel mais recommandé)
+- Python 3.9+
+- PostgreSQL (pour la base de données)
+- Git (pour cloner le projet)
+- Virtualenv (optionnel mais recommandé)
 
 Installation et exécution
 
 1. Cloner le projet
 
-git clone https://github.com/ton-utilisateur/ton-repo.git
-cd ton-repo
+git clone https://github.com/r-palmier/ProjetBackendDev.git
+cd le depot
 
 2. Créer et activer un environnement virtuel (optionnel mais recommandé)
 
@@ -75,13 +68,6 @@ Tester l'API
 
 Endpoint : POST /Applying/
 
-Exemple de payload :
-
-{
-    "name": "Jean Dupont",
-    "email": "jean.dupont@example.com",
-    "skills": "Python, Django, PostgreSQL"
-}
 
 2. Consulter ses informations
 
@@ -103,3 +89,20 @@ Contact
 
 Pour toute question ou suggestion, contactez-moi à :
 palmierobin@outlook.fr
+
+
+
+
+Ressources et détails utils:
+
+API - Routes
+Candidats : 
+GET /candidates/ : Liste tous les candidats.
+POST /candidates/ : Crée un nouveau profil de candidat (disponible uniquement pour les candidats).
+GET /candidates/int:id/ : Récupère les détails d'un candidat spécifique.
+PUT /candidates/int:id/ : Met à jour les informations d'un candidat spécifique.
+DELETE /candidates/int:id/ : Supprime un candidat spécifique.
+
+Recruteurs:
+GET /recruiters/ : Affiche les profils des candidats.
+
