@@ -1,0 +1,8 @@
+.env
+venv/
+*.pyc
+__pycache__/
+*.log
+.idea/           # PyCharm
+.vscode/
+*.iml            # Fichiers de projet IntelliJ
